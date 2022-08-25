@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&family=Source+Sans+Pro:wght@300&display=swap');
+
+:root {
+    --primary-color: darkviolet;
+    --primary-grad-color: linear-gradient(to left, darkviolet, deepskyblue);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* Start Header Intro Section */
+header {
+    height: 80vh;
+    background: var(--primary-grad-color);
+
+    position: relative;
+}
+
+.headerintros {
+    background-color: var(--primary-color);
+
+    color: #fff;
+    padding: 15px 0;
+}
+
+.visiblelgs {
+    display: none;
+}
+
+.infos {
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerintros a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+@media (min-width: 1200px) {
+    .visiblelgs {
+        display: block;
+    }
+}
+
+/* Start Nav Bar  */
+.menustyles li a {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.menustyles li a:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbuttons {
+    border: none;
+}
+
+.navbuttons:focus {
+    box-shadow: none;
+}
+
+.lines1, .lines2, .lines3 {
+    width: 17px;
+    height: 2px;
+
+    margin: 3px;
+
+    transition: all 0.5s ease;
+}
+
+.crossxs .lines1 {
+    transform: rotate(-45deg) translate(-3px, 4px);
+}
+
+.crossxs .lines2 {
+    opacity: 0;
+}
+
+.crossxs .lines3 {
+    transform: rotate(45deg) translate(-3px, -4px);
+}
+/* End Nav Bar  */
+
+/* Start Banner  */
+.banners {
+    width: 90%;
+
+    transform: translate(-50%, -50%);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.bannerheaders {
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    animation-name: banneranis;
+    animation-duration: 2s;
+}
+
+.bannerparagraphs, .banner-btn {
+    animation-name: banneranis;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+
+    animation-fill-mode: backwards;
+}
+
+@keyframes banneranis {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+/* End Banner */
+
+.studentgroups {
+    width: 39%;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    z-index: 1;
+}
+
+.waves {
+    width: 100%;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    z-index: 2;
+}
+/* End Header Intro Section  */
+
+/* Start Student Counter Section */
+.counters {
+    width: 100%;
+    height: 20vh;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counteritems {
+    width: 23%;
+
+    text-align: center;
+
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+
+    display: inline-block;
+}
+
+.counteritems:last-child {
+    border-right: none;
+}
+
+.counteritems .fas {
+    background: var(--primary-grad-color);
+    color: transparent;
+    -webkit-background-clip: text;
+
+    margin-bottom: 10px;
+}
+
+.counteritems h5 {
+    font-size: 15px;
+    font-weight: bold;
+}
+/* End Student Counter Section */
+
+/* Start About Us Section */
+.aboutuss {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('.././asset/img/banner/banner4.jpg');
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+
+.aboutuss ul li {
+    list-style-type: none;
+    background-color: steelblue;
+    
+    margin: 20px 0;
+}
+/* End About Us Section */
