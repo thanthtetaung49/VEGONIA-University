@@ -28,25 +28,28 @@ getcountervalues.forEach(function(getcountervalue) {
         // console.log("i am working");
 
         const countertarget = +getcountervalue.getAttribute("data-target");
-        console.log(typeof countertarget, countertarget);
+        // console.log(typeof countertarget, countertarget);
 
-        const getctcontent = +getcountervalue.textContent;
-        console.log(typeof getctcontent, getctcontent);
+        const getctcontent = +getcountervalue.innerText;
+        // console.log(typeof getctcontent, getctcontent);
 
         const increasenumber = countertarget / 100;
-        console.log(increasenumber);
+        // console.log(increasenumber);
 
         if(getctcontent < countertarget) {
 
-            getcountervalue.innerText = countertarget + increasenumber;
+            getcountervalue.innerText = increasenumber + getctcontent;
             
-            setTimeout(updatecounter, 1000);
+            setTimeout(updatecounter, 100);
         }
     }
 
     updatecounter();
 });
 // End Students Counter Section
-// End JavaScript Area 
+// End JavaScript Area
 
 // 25CT
+
+// setTimeout => initial 200 + 200 + 200
+// setInterval => initial 200 + 200 + 400
