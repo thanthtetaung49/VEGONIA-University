@@ -47,6 +47,39 @@ getcountervalues.forEach(function(getcountervalue) {
     updatecounter();
 });
 // End Students Counter Section
+
+// Start Rating Section
+// Start google code for chart
+
+// End google code for chart
+// End Rating Section
+google.charts.load("current", { packages: ["corechart"] });
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Task", "Hours per Day"],
+    ["Myanmar", 8],
+    ["Thailand", 2],
+    ["Signpore", 4],
+    ["Indonesia", 2],
+    ["Sirilanka", 8],
+  ]);
+
+  var options = {
+    title: "International Students",
+    // is3D: true,
+    // peHole: 0.4,
+    width: 500,
+    height: 400
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById("piechart")
+  );
+
+  chart.draw(data, options);
+}
 // End JavaScript Area
 
 // 25CT
