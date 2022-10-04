@@ -1,14 +1,34 @@
 // Start JQuery Area 
 $(document).ready(function () {
+  
+  // Start Header 
+  // Start Nav Bar
+  $(".navbuttons").click("click", function() {
     
-    // Start Header 
-        // Start Nav Bar
-        $(".navbuttons").click("click", function() {
+    $(this).toggleClass("crossxs");
+  });
+  // End Nav Bar
+  // End Header
 
-            $(this).toggleClass("crossxs");
-        });
-        // End Nav Bar 
-    // End Header 
+  // Start Login Box
+  $("#open-btn").click(function () {
+    
+    $(".form-popup").css({
+
+      display: "block"
+    });
+  });
+
+  $("#formclose-btn").click(function () {
+    
+    $(".form-popup").css({
+
+      display: "none"
+    });
+  });
+  // End Login Box 
+  
+  
 });
 
 // End JQuery Area
@@ -19,40 +39,37 @@ var getcountervalues = document.querySelectorAll(".countervalues");
 // console.log(getcountervalues);
 
 getcountervalues.forEach(function(getcountervalue) {
-
-    getcountervalue.textContent = 0;
-
-    // console.log(getcountervalue);
-
-    const updatecounter = function() {
-        // console.log("i am working");
-
-        const countertarget = +getcountervalue.getAttribute("data-target");
-        // console.log(typeof countertarget, countertarget);
-
-        const getctcontent = +getcountervalue.innerText;
-        // console.log(typeof getctcontent, getctcontent);
-
-        const increasenumber = countertarget / 100;
-        // console.log(increasenumber);
-
-        if(getctcontent < countertarget) {
-
-            getcountervalue.innerText = increasenumber + getctcontent;
-            
-            setTimeout(updatecounter, 100);
-        }
+  
+  getcountervalue.textContent = 0;
+  
+  // console.log(getcountervalue);
+  
+  const updatecounter = function() {
+    // console.log("i am working");
+    
+    const countertarget = +getcountervalue.getAttribute("data-target");
+    // console.log(typeof countertarget, countertarget);
+    
+    const getctcontent = +getcountervalue.innerText;
+    // console.log(typeof getctcontent, getctcontent);
+    
+    const increasenumber = countertarget / 100;
+    // console.log(increasenumber);
+    
+    if(getctcontent < countertarget) {
+      
+      getcountervalue.innerText = increasenumber + getctcontent;
+      
+      setTimeout(updatecounter, 100);
     }
-
-    updatecounter();
+  }
+  
+  updatecounter();
 });
 // End Students Counter Section
 
 // Start Rating Section
 // Start google code for chart
-
-// End google code for chart
-// End Rating Section
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
 
@@ -71,7 +88,7 @@ function drawChart() {
     // is3D: true,
     // peHole: 0.4,
     width: 500,
-    height: 400
+    height: 400,
   };
 
   var chart = new google.visualization.PieChart(
@@ -80,9 +97,19 @@ function drawChart() {
 
   chart.draw(data, options);
 }
-// End JavaScript Area
+// End google code for chart
+// End Rating Section
 
-// 25CT
+const getyear = document.getElementById("getyear");
+const getfullyear = new Date().getUTCFullYear();
 
-// setTimeout => initial 200 + 200 + 200
-// setInterval => initial 200 + 200 + 400
+getyear.textContent = getfullyear;
+
+
+
+  // End JavaScript Area
+  
+  // 25CT
+  
+  // setTimeout => initial 200 + 200 + 200
+  // setInterval => initial 200 + 200 + 400
